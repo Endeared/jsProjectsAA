@@ -197,3 +197,33 @@ function primeFactors(number) {
 
     return factorsArray;
 }
+
+
+// counts all divisors of an inputted number
+function countDivisors(number) {
+    let i = 0;
+    let divisorCount = 0;
+
+    for (i = 2; i < number; i++) {
+        if (number % i === 0) {
+            divisorCount++;
+        }
+    }
+
+    return divisorCount;
+}
+
+
+// checks if a number is anti-prime using the countDivisors function
+function isAntiPrime(number) {
+    let i = 0;
+
+    for (i = number - 1; i > 0; i--) {
+        if (countDivisors(number) < countDivisors(i)) {
+            return false;
+        }
+    }
+
+    return true;
+
+}
