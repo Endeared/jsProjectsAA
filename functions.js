@@ -225,5 +225,57 @@ function isAntiPrime(number) {
     }
 
     return true;
+}
 
+
+// counts number of vowels in a string
+function vowelCounter(string) {
+    let vowels = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"];
+    let vowelCount = 0;
+    let i = 0;
+
+    for (i = 0; i < string.length; i++) {
+        let char = string[i];
+        if (vowels.includes(char)) {
+            vowelCount++;
+        }
+    }
+
+    return vowelCount;
+}
+
+
+// determines which word in a sentence contains the most vowels using vowelCounter function
+function mostVowels(sentence) {
+    let vowels = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"];
+    let stringWords = sentence.split(" ");
+    let topIndex = 0;
+    let currentCount = 0;
+    let i = 0;
+
+    for (i = 0; i < stringWords.length; i++) {
+        if (vowelCounter(stringWords[i]) > currentCount) {
+            currentCount = vowelCounter(stringWords[i]);
+            topIndex = stringWords[i];
+        }
+    }
+
+    return topIndex;
+}
+
+
+// returns value of half of sum of array if array contains said half value, otherwise returns null. uses sumArray function
+function allElseEqual(array) {
+    // your code here
+    let i = 0;
+    let sum = sumArray(array);
+    let halfOfSum = sum / 2;
+
+    for (i = 0; i < array.length; i++) {
+        if (array[i] === halfOfSum) {
+            return halfOfSum;
+        }
+    }
+
+    return "null";
 }
