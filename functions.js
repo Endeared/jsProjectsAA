@@ -299,3 +299,33 @@ function checkIfArray(input) {
         console.log("Not an array.")
     }
 }
+
+function diophantineEquation(targetValue) {
+    let r = 1;
+    let m = 1;
+    let n = 0;
+    let l = m + r;
+    let e = 3*(m**2)*r + 3*m*(r**2) + (r**3) - (n**3);
+
+    if (m < 600) {
+        if (-100 <= e <= 100) {
+            if (e > 0) {
+                l = m + r;
+                console.log(e + ", " + l + ", " + m + ", " + n);
+            }
+            r = 1;
+            n = n+1;
+            m = l;
+        } else if (e > 100) {
+            n = n + 1;
+        } else if (e < -100) {
+            m = m + 1;
+        }
+    } else {
+        r = r + 1;
+        n = 0;
+        m = l;
+        l = m + r;
+    }
+
+}
