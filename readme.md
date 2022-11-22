@@ -20,7 +20,7 @@
     + __Note__ dependencies: **isPrime**
 + count all divisors of a number (**countDivisors**)
 + check if a number is anti-prime (**isAntiPrime**)
-    + __Note__ dependencies: **countDivisors**
+    > __Note__ dependencies: **countDivisors**
 + count vowels in a string (**vowelCounter**)
 + calculate which word in a sentence has the most vowels (**mostVowels**)
     + __Note__ dependencies: **vowelCounter**
