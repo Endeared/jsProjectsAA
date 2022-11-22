@@ -123,3 +123,77 @@ function doubler(array) {
 
     return doubledArray;
 }
+
+
+// check for if a number is prime
+function isPrime(number) {
+    let i = 2;
+
+    for (i = 2; i < number; i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+// returns laligat sum of a number using isPrime function
+function laligatSum(number) {
+    let sum = 0;
+    let i = 2;
+
+    for (i = 2; i <= number; i++) {
+        if (isPrime(i)) {
+            sum += i;
+        }
+    }
+
+    return sum;
+}
+
+
+// returns new array containing only prime numbers in target array using isPrime function
+function choosePrimes(array) {
+    let i = 0;
+    let primeArray = [];
+
+    for (i = 0; i < array.length; i++) {
+        if (isPrime(array[i]) === true) {
+            primeArray.push(array[i]);
+        }
+    }
+
+    return primeArray;
+
+}
+
+
+// returns the closest prime number greater than the target number using the isPrime function
+function nextPrime(number) {
+    let i = number + 1;
+
+    for (i = number + 1; i < Infinity; i++) {
+        if (isPrime(i) === true) {
+            return i;
+        }
+    }
+}
+
+
+// returns an array of numbers that are prime and factors of the target number using the isPrime function
+function primeFactors(number) {
+    let i = 2;
+    let factorsArray = [];
+
+    for (i = 2; i <= number; i++) {
+        if (isPrime(i) === true) {
+            if (number % i === 0) {
+                factorsArray.push(i);
+            }
+        }
+    }
+
+    return factorsArray;
+}
