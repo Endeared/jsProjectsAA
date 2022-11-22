@@ -300,32 +300,175 @@ function checkIfArray(input) {
     }
 }
 
-function diophantineEquation(targetValue) {
-    let r = 1;
-    let m = 1;
-    let n = 0;
-    let l = m + r;
-    let e = 3*(m**2)*r + 3*m*(r**2) + (r**3) - (n**3);
 
-    if (m < 600) {
-        if (-100 <= e <= 100) {
-            if (e > 0) {
-                l = m + r;
-                console.log(e + ", " + l + ", " + m + ", " + n);
-            }
-            r = 1;
-            n = n+1;
-            m = l;
-        } else if (e > 100) {
-            n = n + 1;
-        } else if (e < -100) {
-            m = m + 1;
-        }
-    } else {
-        r = r + 1;
-        n = 0;
-        m = l;
-        l = m + r;
+// searches for pairs of consecutive letters in a string, returns true / false / null
+function hasDoubleLetter(string) {
+    let doubles = ["aa", "bb", "cc", "dd", "ee", "ff", "gg", "hh", "ii", "jj", "kk", "ll", "mm", "nn", "oo", "pp", "qq", "rr", "ss", "tt", "uu", "vv", "ww", "xx", "yy", "zz"]
+
+    if (typeof string !== 'string') {
+        return null;
     }
 
+    if (doubles.some(doubles => string.includes(doubles))) {
+        return true;
+    }
+
+    return false;
+}
+
+
+// searches string for the first vowel, returns the first vowel
+function firstVowel(string) {
+    let vowels = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"];
+    let i = 0;
+
+    if (typeof string !== 'string') {
+        return null;
+    }
+
+    for (i = 0; i < string.length; i++) {
+        let currentChar = string[i];
+        if (vowels.includes(currentChar)) {
+            return string[i];
+        }
+    }
+
+    return null;
+}
+
+
+// searches string for last vowel, returns the last vowel
+function lastVowel(string) {
+    let vowels = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"];
+    let i = 0;
+
+    if (typeof string !== 'string') {
+        return null;
+    }
+
+    for (i = string.length - 1; i >= 0; i--) {
+        let currentChar = string[i];
+        if (vowels.includes(currentChar)) {
+            return string[i];
+        }
+    }
+
+    return null;
+}
+
+
+// checks for smallest value in an array and returns that value
+function minValue(nums) {
+    if (Array.isArray(nums) !== true) {
+        return null;
+    }
+
+    let i = 0;
+    let compare = Infinity;
+
+    for (i = 0; i < nums.length; i++) {
+        if (nums[i] < compare) {
+            compare = nums[i];
+        }
+    }
+
+    if (compare === Infinity) {
+        return null;
+    }
+
+    return compare;
+}
+
+
+// returns average of sum of all values in an array
+function avgVal(array) {
+    if (Array.isArray(array) !== true) {
+        return null;
+    }
+
+    let i = 0;
+    let total = 0;
+
+    for (i = 0; i < array.length; i++) {
+        total += array[i];
+    }
+
+    let result = total / array.length;
+
+    if (result === null || isNaN(result)) {
+        return null;
+    }
+
+    return result;
+}
+
+
+// returns largest value in an array
+function maxValue(nums) {
+    if (Array.isArray(nums) !== true) {
+        return null;
+    }
+
+    let i = 0;
+    let compare = -Infinity;
+
+    for (i = 0; i < nums.length; i++) {
+        if (nums[i] > compare) {
+            compare = nums[i];
+        }
+    }
+
+    if (compare === -Infinity || compare === null || isNaN(compare)) {
+        return null;
+    }
+
+    return compare;
+}
+
+
+// reverb a string
+function reverb(string) {
+    if (typeof string !== 'string') {
+        return null;
+    }
+
+    let last1 = string[string.length - 1];
+    let last2 = string[string.length - 2];
+    let last3 = string[string.length - 3];
+
+    let result = string + last3 + last2 + last1;
+
+    return result;
+}
+
+
+// returns largest prime number less than target number. uses isPrime function
+function prevPrime(number) {
+    if (typeof number !== 'number') {
+        return null;
+    }
+
+    let i = 0;
+
+    for (i = number - 1; i > 2; i--) {
+        if (isPrime(i) === true) {
+            return i;
+        }
+    }
+
+    return null;
+}
+
+
+// mutates an array by adding the mutator to each array value
+function additionMutator(array, mutator) {
+    if (Array.isArray(array) !== true) {
+        return null;
+    }
+
+    let i = 0;
+
+    for (i = 0; i < array.length; i++) {
+        array[i] += mutator;
+    }
 }
