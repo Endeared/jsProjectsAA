@@ -279,3 +279,23 @@ function allElseEqual(array) {
 
     return "null";
 }
+
+
+// checks if an inputted value / variable is a number, and returns a response appropriately
+function checkIfNumber(input) {
+    if (typeof input === 'number') {
+        console.log("Valid!")
+    } else {
+        console.log("Invalid input.")
+    }
+}
+
+
+// checks if an inputted value / variable is an array, and returns a response appropriately
+function checkIfArray(input) {
+    if (Array.isArray(input) === true) {
+        console.log("Valid array!")
+    } else {
+        console.log("Not an array.")
+    }
+}
