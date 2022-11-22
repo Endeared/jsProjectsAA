@@ -96,3 +96,30 @@ function sumArray(array) {
 
     return sum;
 }
+
+
+// returns product of an array
+function productWithReduce(array) {
+    let i = 0;
+    let product = 1;
+
+    for (i = 0; i < array.length; i++) {
+        product *= array[i];
+    }
+
+    return product;
+}
+
+
+// doubles every value in an array, returning a new array
+function doubler(array) {
+    let doubledArray = [];
+    let i = 0;
+
+    for (i = 0; i < array.length; i++) {
+        let doubledValue = array[i] * 2;
+        doubledArray.push(doubledValue);
+    }
+
+    return doubledArray;
+}
