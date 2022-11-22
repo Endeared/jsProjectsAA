@@ -52,3 +52,47 @@ function threeIncreasing(array) {
 
     return check;
 }
+
+
+// checks if an array includes a target value (without .includes or .indexOf)
+function myIncludes(array, target) {
+    let i = 0;
+    let check = false;
+
+    for (i = 0; i < array.length; i++) {
+        if (array[i] === target) {
+            check = true;
+        }
+    }
+
+    return check;
+}
+
+
+// checks for first occurrence of a target value within an array (without .includes or .indexOf)
+function myIndexOf(array, target) {
+    let i = 0;
+    let check = -1;
+
+    for (i = 0; i < array.length; i++) {
+        if (array[i] === target) {
+            check = i;
+            break;
+        }
+    }
+
+    return check;
+}
+
+
+// returns sum of an array
+function sumArray(array) {
+    let i = 0;
+    let sum = 0;
+
+    for (i = 0; i < array.length; i++) {
+        sum += array[i];
+    }
+
+    return sum;
+}
