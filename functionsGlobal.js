@@ -900,7 +900,6 @@ function fibonacciSequence(number) {
 
 // takes an array of numbers, returns array containing only prime numbers in array. uses unique function
 function pickPrimes(array) {
-    // your code here
     if (Array.isArray(array) !== true) {
         return "Not an array!"
     }
@@ -922,4 +921,64 @@ function pickPrimes(array) {
     }
 
     return unique(newArray);
+}
+
+
+// takes in an array of numbers, returns an array where every even number is replaced with its greatest factor
+function greatestFactorArray(array) {
+    if (Array.isArray(array) !== true) {
+        return "Not an array!"
+    }
+
+    let newArray = [];
+    let i = 0;
+    let j = 0;
+    let greatestFactor = 0;
+
+    for (i = 0; i < array.length; i++) {
+        if (array[i] % 2 === 0) {
+            for (j = 1; j < array[i]; j++) {
+                if (array[i] % j === 0) {
+                    greatestFactor = j;
+                }
+            }
+            newArray.push(greatestFactor);
+        } else if (array[i] % 2 != 0) {
+            newArray.push(array[i]);
+        }
+    }
+
+    return newArray;
+}
+
+
+// returns summation of a number
+function summation(number) {
+    let i = 0;
+    let runningSum = 0;
+
+    for (i = 0; i <= number; i++) {
+        runningSum = runningSum + i;
+    }
+
+    return runningSum;
+}
+
+
+// returns an array of summations of a sequence of inputted length, uses summation function
+function summationSequence(start, length) {
+    let i = 0;
+    let runningNum = start;
+    let newArray = [];
+    let runningSummation = 0;
+
+    newArray.push(start);
+
+    for (i = 1; i < length; i++) {
+        runningSummation = summation(runningNum);
+        runningNum = runningSummation;
+        newArray.push(runningSummation);
+    }
+
+    return newArray;
 }
