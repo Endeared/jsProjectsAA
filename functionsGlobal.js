@@ -724,3 +724,141 @@ function tripleSequence(start, length) {
 
     return newArray;
 }
+
+
+// takes in an array, returns an array with no duplicate values
+function unique(array) {
+    if (Array.isArray(array) !== true) {
+        return "Not an array!"
+    }
+
+    let newArray = [];
+    let i = 0;
+
+    for (i = 0; i < array.length; i++) {
+        if (newArray.indexOf(array[i]) === -1) {
+            newArray.push(array[i]);
+        }
+    }
+
+    return newArray;
+}
+
+
+// takes in an array of words, returns array with each word yelled
+function yeller(words) {
+    if (Array.isArray(words) !== true) {
+        return "Not an array!"
+    }
+
+    let newArray = [];
+    let i = 0;
+
+    for (i = 0; i < words.length; i++) {
+        let yelledValue = words[i].toUpperCase() + "!";
+        newArray.push(yelledValue);
+    }
+
+    return newArray;
+}
+
+
+// takes in array of numbers, returns array with each number tripled
+function tripler(nums) {
+    if (Array.isArray(nums) !== true) {
+        return "Not an array!"
+    }
+
+    let newArray = [];
+    let i = 0;
+
+    for (i = 0; i < nums.length; i++) {
+        let tripledValue = nums[i] * 3;
+        newArray.push(tripledValue);
+    }
+
+    return newArray;
+}
+
+
+// takes in an array of words, returns an array with only words longer than 5 characters
+function longWords(words) {
+    if (Array.isArray(words) !== true) {
+        return "Not an array!";
+    }
+
+    let i = 0;
+    let newArray = [];
+
+    for (i = 0; i < words.length; i++) {
+        if (words[i].length > 5) {
+            newArray.push([words[i]]);
+        }
+    }
+
+    return newArray;
+}
+
+
+// takes an array of strings / words and a designated suffix, returns an array with words / strings that only end with suffix
+function chooseyEndings(array, suffix) {
+    let i = 0;
+    let newArray = [];
+
+    for (i = 0; i < array.length; i++) {
+        if (array[i].endsWith(suffix)) {
+            newArray.push(array[i]);
+        }
+    }
+
+    return newArray;
+}
+
+
+// takes in two numbers, returns all int lower than biggest number that are factors of both nums
+function commonFactors(num1, num2) {
+    if (typeof num1 !== 'number' && typeof num2 !== 'number') {
+        return "Invalid input(s)!"
+    }
+
+    let i = 0;
+    let newArray = [];
+    let biggerValue = 0;
+
+    if (num1 >= num2) {
+        biggerValue = num1;
+    } else if (num2 >= num1) {
+        biggerValue = num2;
+    }
+
+    for (i = 0; i < biggerValue; i++) {
+        if (num1 % i === 0 && num2 % i === 0) {
+            newArray.push(i);
+        }
+    }
+
+    return newArray;
+}
+
+
+// takes in an array of values, returns an array of the sum of every value of i + (i + 1)
+function adjacentSums(array) {
+    if (Array.isArray(array) !== true) {
+        return "Not an array!"
+    }
+
+    let i = 0;
+    let firstValue = 0;
+    let secondValue = 0;
+    let sumValue = 0;
+    let newArray = [];
+
+    for (i = 0; i < array.length - 1; i++) {
+        firstValue = array[i];
+        secondValue = array[i + 1];
+        sumValue = firstValue + secondValue;
+        newArray.push(sumValue);
+    }
+
+    return newArray;
+}
