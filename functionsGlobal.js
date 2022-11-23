@@ -862,3 +862,37 @@ function adjacentSums(array) {
 
     return newArray;
 }
+
+
+// takes a num and returns fib array up to interval of that num. messy, crude, and ugly, but first method i could think of
+function fibonacciSequence(number) {
+    if (typeof number !== 'number') {
+        return "Not a number!"
+    }
+
+    let i = 0;
+    let prevNum1 = 1;
+    let prevNum2 = 1;
+    let sum = 0;
+    let fibArray = [];
+
+    if (number <= 0) {
+        return fibArray;
+    } else if (number === 1) {
+        fibArray.push(1);
+        return fibArray;
+    } else if (number === 2) {
+        fibArray.push(1, 1);
+        return fibArray;
+    }
+
+    fibArray.push(1, 1);
+    for (i = 3; i <= number; i++) {
+        sum = prevNum1 + prevNum2;
+        fibArray.push(sum);
+        prevNum2 = prevNum1;
+        prevNum1 = sum;
+    }
+
+    return fibArray;
+}
