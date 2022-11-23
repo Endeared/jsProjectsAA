@@ -668,3 +668,59 @@ function fizzBuzz(max) {
 
     return fizzBuzzArray;
 }
+
+
+// takes in pos. int max, returns array of all pos. ints less than max that fit pitPat conditions (lol)
+function pitPat(max) {
+    if (typeof max !== 'number') {
+        return "Not a number!";
+    } else if (max < 0) {
+        return "Not a positive integer!"
+    }
+
+    let pitPatArray = [];
+    let i = 0;
+
+    for (i = 4; i <= max; i++) {
+        if (i % 4 === 0 && i % 6 === 0) {
+        } else if (i % 4 === 0) {
+            pitPatArray.push(i);
+        } else if (i % 6 === 0) {
+            pitPatArray.push(i);
+        }
+    }
+
+    return pitPatArray;
+}
+
+
+// takes in a base int, length int, returns an array of every int up to base * length that is divisible by base
+function doubleSequence(base, length) {
+    let newArray = [];
+    let i = 0;
+
+    for (i = 1; i <= length; i++) {
+        let pushValue = base * i;
+        newArray.push(pushValue);
+    }
+
+    return newArray;
+}
+
+
+// takes in start int, length int, returns array up to length int in length, where each value is 3 times the prev value
+function tripleSequence(start, length) {
+    let newArray = [];
+    let i = 0;
+
+
+    newArray.push(start);
+    let prevValue = start;
+    for (i = 1; i < length; i++) {
+        let pushValue = prevValue * 3;
+        newArray.push(pushValue);
+        prevValue = pushValue;
+    }
+
+    return newArray;
+}
