@@ -472,3 +472,116 @@ function additionMutator(array, mutator) {
         array[i] += mutator;
     }
 }
+
+
+// takes in an array of strings, returns an array where every even string is caps, every odd string is lowercase
+function alternatingWords(array) {
+    if (Array.isArray(array) !== true) {
+        return null;
+    }
+
+    let i = 0;
+    let newArray = [];
+
+    for (i = 0; i < array.length; i++) {
+        if (i % 2 === 0) {
+            let evenString = array[i].t5oUpperCase();
+            newArray.push(evenString);
+        } else {
+            let oddString = array[i].toLowerCase();
+            newArray.push(oddString);
+        }
+    }
+
+    console.log(newArray);
+}
+
+
+// takes in a string and returns the string reversed, character by character
+function reverseString(str) {
+    if (typeof str !== 'string') {
+        return null;
+    }
+
+    let reversedString = "";
+    let i = 0;
+
+    for (i = str.length - 1; i > -1; i--) {
+        let currentChar = str[i];
+        reversedString += currentChar;
+    }
+
+    return reversedString;
+}
+
+
+// takes a word / string, removes last vowel (if possible), returns word / string
+function removeLastVowel (word) {
+    if (typeof word !== 'string') {
+        return null;
+    }
+
+    let vowels = ["a", "A", "e", "E", "i", "I", "o", "O", "u", "U"]
+    let i = 0;
+
+    for (i = word.length - 1; i > -1; i--) {
+        let currentChar = word[i];
+        if (vowels.includes(currentChar)) {
+            word = word.replace(word[i], "");
+            return word;
+        }
+    }
+
+    return word;
+}
+
+
+// checks if a word / string contains the letter e / how many times it occurs
+function containsE(word) {
+    let i = 0;
+    let e = ["e", "E"];
+    let eCount = 0;
+
+    for (i = 0; i < word.length; i++) {
+        let currentChar = word[i];
+        if (e.includes(currentChar)) {
+            eCount++;
+        }
+    }
+
+    return eCount;
+}
+
+
+// returns sentence with words containing e removed, uses containsE function
+function removeEWords(sentence) {
+    let e = ["e", "E"];
+    let sentenceWords = sentence.split(" ");
+    let i = 0;
+    let newSentence = "";
+
+    for (i = 0; i < sentenceWords.length; i++) {
+        if (containsE(sentenceWords[i]) > 0) {
+        } else if (containsE(sentenceWords[i]) <= 0) {
+            newSentence = newSentence + sentenceWords[i] + " ";
+        }
+    }
+
+    return newSentence;
+}
+
+
+// takes in a location, element, and array - adds element to location of array depending on location input (first / last)
+function addToArray(location, element, arr) {
+    let unshiftOptions = ["front", "Front", "FRONT", "f"];
+    let pushOptions = ["back", "Back", "BACK", "b", "end", "End", "END", "e"];
+
+    if (unshiftOptions.indexOf(location) !== -1) {
+        arr.unshift(element);
+    } else if (pushOptions.indexOf(location) !== -1) {
+        arr.push(element);
+    } else {
+        console.log("ERROR");
+    }
+
+}
