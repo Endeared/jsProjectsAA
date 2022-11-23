@@ -896,3 +896,30 @@ function fibonacciSequence(number) {
 
     return fibArray;
 }
+
+
+// takes an array of numbers, returns array containing only prime numbers in array. uses unique function
+function pickPrimes(array) {
+    // your code here
+    if (Array.isArray(array) !== true) {
+        return "Not an array!"
+    }
+
+    let newArray = [];
+    let i = 0;
+    let j = 0;
+
+    for (i = 0; i < array.length; i++) {
+        for (j = 2; j <= array[i]; j++) {
+            if (array[i] === 2) {
+                newArray.push(2);
+            } else if (array[i] % j === 0) {
+                break;
+            } else {
+                newArray.push(array[i]);
+            }
+        }
+    }
+
+    return unique(newArray);
+}
