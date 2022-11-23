@@ -1,4 +1,6 @@
-# just a record of app academy tasks / simple js functions and / or projects
+# collection of app academy tasks / simple js functions and / or project scripts
+
+## all functions in functionsGlobal use function declaration, while all functions in functionsLocal use function expression
 
 ## functions included:
 

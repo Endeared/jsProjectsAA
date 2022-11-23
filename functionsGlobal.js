@@ -585,3 +585,41 @@ function addToArray(location, element, arr) {
     }
 
 }
+
+
+// takes in a min integer and max integer, returns an array with every integer in between min-max
+function range(min, max) {
+    let i = 0;
+    let newArray = [];
+
+    for (i = min; i <= max; i++) {
+        newArray.push(i);
+    }
+
+    return newArray;
+}
+
+
+// takes in a max integer, and returns an array with every even positive even integer less than ma
+function evenNumbers(max) {
+    if (typeof max !== 'number') {
+    return null;
+    }
+
+    let i = 0;
+    let evenArray = [];
+
+    for (i = 2; i < max; i += 2) {
+        evenArray.push(i);
+    }
+
+    return evenArray;
+}
+
+
+// takes in a min integer, max integer, step integer, and prints out every integer between min-max in step intervals
+function logBetweenStepper(min, max, step) {
+    for (i = min; i <= max; i += step) {
+        console.log(i);
+    }
+}
