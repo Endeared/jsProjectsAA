@@ -1,5 +1,7 @@
 # collection of app academy tasks / simple js functions and / or project scripts
 
+none of these functions have an individual / out-of-box purpose on their own. they are just simply for show to benchmark what i have learned / potential later use.
+
 ## functions included:
 
 + search array for word (**wordWithinArray**)
@@ -49,8 +51,8 @@
 + return an array with every even positive integer less than max (**evenNumbers**)
 + print every integer between min-max in step intervals (**logBetweenStepper**)
 + return array of all positive factors of a given integer (**factorsOf**)
-+ FizzBuzz for all positive integers less than a max value (**fizzBuzz**)
-+ PitPat for all positive integers less than a max value (**pitPat**)
++ FizzBuzz for all positive integers less than a max value 🙃 (**fizzBuzz**)
++ PitPat for all positive integers less than a max value 🙃 (**pitPat**)
 + return array of every int up to a int base * a int length that is divisible by base (**doubleSequence**)
 + return an array up to int length, where each value is 3 times the prev value (**tripleSequence**)
 + take in array, returns array with no duplicate values (**unique**)
