@@ -600,7 +600,7 @@ function range(min, max) {
 }
 
 
-// takes in a max integer, and returns an array with every even positive even integer less than ma
+// takes in a max integer, and returns an array with every even positive even integer less than max
 function evenNumbers(max) {
     if (typeof max !== 'number') {
     return null;
