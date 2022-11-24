@@ -72,3 +72,7 @@
 + take in array, return array with all values shifted right 2 spaces (**rotateRight**)
 + take in array, shift either left or right by 'num' amount. abs value of num must be < abs value of array length (**rotate**)
 + take string of words, return initials (**initials**)
++ take in sentence, return longest word in sentence (**longestWord**)
++ take in sentence, return shortest word in sentence (**shortestWord**)
++ take in sentence, return reversed sentence word-for-word (**reverseSentence**)
++ take in string / sentence and target word, checks string / sentence for target word (**containsWord**)
