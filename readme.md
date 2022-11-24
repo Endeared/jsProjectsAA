@@ -43,7 +43,7 @@
 + remove last vowel from word / string (**removeLastVowel**)
 + check if a word contains letter e/E, counts occurrences (**containsE**)
 + remove all e/E from a sentence (**removeEWords**)
-    > __Note__ dependencies: **containsE**
+    > __Note__ dependencies: <style>**containsE**{color:Blue;}</style>
 + add inputted value to an array, either at start or end depending on choice (**addToArray**)
 + return an array with every integer between min-max value inputs (**range**)
 + return an array with every even positive integer less than max (**evenNumbers**)
