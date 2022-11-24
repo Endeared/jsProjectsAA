@@ -1071,3 +1071,77 @@ function initials(name) {
     let result = initials.toUpperCase();
     return result;
 }
+
+
+// takes in sentence, returns longest word in sentence
+function longestWord(sentence) {
+    let words = sentence.split(" ");
+    let i = 0;
+    let highestLength = 0;
+    let storedString = 0;
+
+    for (i = 0; i < words.length; i++) {
+        let currentWord = words[i];
+        let currentLength = currentWord.length;
+        if (currentLength > highestLength) {
+            storedString = words[i];
+        }
+        highestLength = currentLength;
+    }
+
+    if (storedString === 0) {
+        return "";
+    }
+
+    return storedString;
+}
+
+
+// takes in sentence, returns shortest word in sentence
+function shortestWord(sentence) {
+    let words = sentence.split(" ");
+    let i = 0;
+    let lowestLength = Infinity;
+    let storedString = 0;
+
+    for (i = 0; i < words.length; i++) {
+        let currentWord = words[i];
+        let currentLength = currentWord.length;
+        if (currentLength <= lowestLength) {
+            storedString = words[i];
+            lowestLength = currentLength;
+        }
+    }
+
+    return storedString;
+}
+
+
+// takes in a sentence, and reverses it word for word
+function reverseSentence(sentence) {
+    let words = sentence.split(" ");
+    let i = 0;
+    let reversed = [];
+
+    for (i = words.length - 1; i >= 0; i--) {
+        reversed.push(words[i]);
+    }
+
+    let result = reversed.join(" ");
+
+    return result;
+}
+
+
+// takes in a string / sentence and target word, checks for target word in string / sentence
+function containsWord(sentence, targetWord) {
+    let newSentence = sentence.toLowerCase();
+    let newTarget = targetWord.toLowerCase();
+    let words = newSentence.split(" ");
+
+    if (words.indexOf(newTarget) !== -1) {
+        return true;
+    } else {
+        return false;
+    }
+}
