@@ -1,7 +1,5 @@
 # collection of app academy tasks / simple js functions and / or project scripts
 
-## all functions in functionsGlobal use function declaration, while all functions in functionsLocal use function expression
-
 ## functions included:
 
 + search array for word (**wordWithinArray**)
@@ -40,3 +38,37 @@
 + searches for largest prime number that is less than target number (**prevPrime**)
     > __Note__ dependencies: **isPrime**
 + mutate an array by adding a mutator value to each array value (**additionMutator**)
++ take array, returns array where every even string is caps, odd string is lowercase (**alternatingWords**)
++ reverse a string character by character (**reverseString**)
++ remove last vowel from word / string (**removeLastVowel**)
++ check if a word contains letter e/E, counts occurrences (**containsE**)
++ remove all e/E from a sentence (**removeEWords**)
+    > __Note__ dependencies: **containsE**
++ add inputted value to an array, either at start or end depending on choice (**addToArray**)
++ return an array with every integer between min-max value inputs (**range**)
++ return an array with every even positive integer less than max (**evenNumbers**)
++ print every integer between min-max in step intervals (**logBetweenStepper**)
++ return array of all positive factors of a given integer (**factorsOf**)
++ FizzBuzz for all positive integers less than a max value (**fizzBuzz**)
++ PitPat for all positive integers less than a max value (**pitPat**)
++ return array of every int up to a int base * a int length that is divisible by base (**doubleSequence**)
++ return an array up to int length, where each value is 3 times the prev value (**tripleSequence**)
++ take in array, returns array with no duplicate values (**unique**)
++ take in an array of words, returns array with words full caps (**yeller**)
++ take in array of numbers, returns array with each value tripled (**tripler**)
++ take in array of words, return array with only words longer than 5 chars (**longWords**)
++ take in array of strings, return array with only strings ending in input suffix (**chooseyEndings**)
++ take in two numbers, return all integers (lower than larger number) that are factors of both nums (**commonFactors**)
++ take in an array of values, return array of the sum of every value of i + (i + 1) (**adjacentSums**)
++ take a num and return fib array up to interval of num (**fibonacciSequence**)
++ take in array of numbers, return array containing only prime nums in array (**pickPrimes**)
+    > __Note__ dependencies: **unique**
++ take in array of nums, return array where each even num is replaced by its greatest factor (**greatestFactorArray**)
++ calculate summation of a number (**summation**)
++ return array of summations of a sequence of int length, starting at int start (**summationSequence**)
+    > __Note__ dependencies: **summation**
++ remove first or last value from an array based on user input (**removeFromArray**)
++ take in array and remove last 'num' values of said array, return new array with popped values (**popper**)
++ take in array, return array with all values shifted right 2 spaces (**rotateRight**)
++ take in array, shift either left or right by 'num' amount. abs value of num must be < abs value of array length (**rotate**)
++ take string of words, return initials (**initials**)
