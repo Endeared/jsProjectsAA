@@ -982,3 +982,92 @@ function summationSequence(start, length) {
 
     return newArray;
 }
+
+
+// removes first or last value from an array depending on user input
+function removeFromArray(location, arr) {
+    let unshiftOptions = ["front", "Front", "FRONT", "f"];
+    let pushOptions = ["back", "Back", "BACK", "b", "end", "End", "END", "e"];
+
+    if (unshiftOptions.indexOf(location) !== -1) {
+        arr.shift();
+    } else if (pushOptions.indexOf(location) !== -1) {
+        arr.pop();
+    } else {
+        console.log("Error.")
+    }
+}
+
+
+// takes in an array and removes the last num values of said array, returns new array with popped values
+function popper(array, num) {
+    let i = 0;
+    let j = 0;
+    let newArray = [];
+
+    for (j = array.length - 1; j >= array.length - num; j--) {
+        newArray.push(array[j]);
+    }
+
+    for (i = 0; i < num; i++) {
+        array.pop();
+    }
+
+    return newArray;
+}
+
+
+// takes an array and returns an array with all values shifted right 2 spaces
+function rotateRight(array, num) {
+    let i = 0;
+    let originalArray = [];
+    let secondStrand = array.slice(array.length - num);
+
+    for (i = 0; i < array.length - num; i++) {
+        originalArray.push(array[i]);
+    }
+
+    let resultArray = secondStrand.concat(originalArray);
+    return resultArray;
+}
+
+
+// takes an array, rotates either left or right by num amount. abs.num must be < abs.array length
+function rotate(array, num) {
+    let i = 0;
+    let positiveStrand = array.slice(array.length - num);
+    let negativeStrand = array.slice(0 + num);
+
+    if (num > array.length || num < -array.length) {
+        console.log("Invalid input!");
+        return;
+    } else if (num < 0) {
+        for (i = 0; i > num; i--) {
+            array.shift()
+        }
+        array.push(...negativeStrand)
+    } else if (num >= 0) {
+        for (i = 0; i < num; i++) {
+            array.pop()
+        }
+        array.unshift(...positiveStrand)
+    }
+}
+
+
+// takes string of words (preferably first + last names), returns initials as a string
+function initials(name) {
+    let nameWords = name.split(" ");
+    let i = 0;
+    let initials = ""
+
+    console.log(nameWords);
+
+    for (i = 0; i < nameWords.length; i++) {
+        let word = nameWords[i];
+        initials += word[0];
+    }
+
+    let result = initials.toUpperCase();
+    return result;
+}
