@@ -1319,3 +1319,49 @@ function sameCharCollapse(str) {
 
     return str;
 }
+
+
+// takes in array of values, returns 2d box array of all possible unique value pairings
+function pairsMaker(arr) {
+    if (Array.isArray(arr) !== true) {
+        return null;
+    }
+
+    let i = 0;
+    let j = 0;
+    let returnArray = [];
+
+    for (i = 0; i < arr.length; i++) {
+        let value1 = arr[i];
+        for (j = i + 1; j < arr.length; j++) {
+            let value2 = arr[j];
+            let currentPair = [value1, value2]
+            returnArray.push(currentPair);
+        }
+    }
+
+    return returnArray;
+}
+
+
+// takes in array of numbers and a target, if any pair of values in array adds up to target, return true, else false
+function twoSum(arr, target) {
+    let i = 0;
+    let j = 0;
+    let sum = 0;
+
+    for (i = 0; i < arr.length; i++) {
+        let value1 = arr[i];
+        for (j = i + 1; j < arr.length; j++) {
+            let value2 = arr[j];
+            sum = value1 + value2;
+            if (sum === target) {
+                return true;
+            } else {
+                sum = 0;
+            }
+        }
+    }
+
+    return false;
+}
