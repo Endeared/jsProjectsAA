@@ -1365,3 +1365,51 @@ function twoSum(arr, target) {
 
     return false;
 }
+
+
+// takes in array of nums and target product, if any pair of values in array multiply to target, return true, else false
+function pairProduct(array, product) {
+    let i = 0;
+    let j = 0;
+    let prod = 0;
+
+    for (i = 0; i < array.length; i++) {
+        let value1 = array[i];
+        for (j = i + 1; j < array.length; j++) {
+            let value2 = array[j];
+            prod = value1 * value2;
+            if (prod === product) {
+                return true;
+            } else {
+                prod = 0;
+            }
+        }
+    }
+
+    return false;
+}
+
+
+// takes in array of nums, returns how many unique pairs of nums have a sum of 0
+function strangeSums(array) {
+    let i = 0;
+    let j = 0;
+    let sum = 0;
+    let zeroSumCount = 0;
+
+    for (i = 0; i < array.length; i++) {
+        let value1 = array[i];
+        for (j = i + 1; j < array.length; j++) {
+            let value2 = array[j];
+            sum = value1 + value2;
+            if (sum === 0) {
+                zeroSumCount++;
+                sum = 0;
+            } else {
+                sum = 0;
+            }
+        }
+    }
+
+    return zeroSumCount;
+}
