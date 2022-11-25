@@ -1269,3 +1269,30 @@ function repeatingTranslate(sentence) {
     let result = newArray.join(" ");
     return result;
 }
+
+
+// takes in sentence, returns sentence where each word begins at its first vowel
+function consonantCancel(sentence) {
+    let vowels = "aeiouAEIOU";
+    let i = 0;
+    let j = 0;
+    let words = sentence.split(" ");
+    let newArray = [];
+
+    for (i = 0; i < words.length; i++) {
+        let currentWord = words[i];
+        for (j = 0; j < currentWord.length; j++) {
+            let currentChar = currentWord[j];
+            if (vowels.includes(currentChar)) {
+                let newWord = currentWord.slice(j)
+                newArray.push(newWord);
+                break;
+            } else if (j === currentWord.length - 1) {
+                newArray.push(currentWord);
+            }
+        }
+    }
+
+    let result = newArray.join(" ");
+    return result;
+}
