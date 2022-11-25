@@ -1218,3 +1218,54 @@ function hipsterfy(sentence) {
     let newSentence = newWords.join(" ");
     return newSentence;
 }
+
+
+// takes in a word, returns the word repeated
+function repeatWord(word) {
+    let i = 0;
+    let newWord = word + word;
+
+    return newWord;
+}
+
+
+// takes in word, repeats all letters after last vowel
+function repeatLetters(word) {
+    let i = 0;
+    let vowels = "aeiouAEIOU";
+
+    for (i = word.length - 1; i >= 0; i--) {
+        let currentChar = word[i];
+        if (vowels.includes(currentChar)) {
+            let newWord = word.slice(i);
+            let result = word + newWord;
+            return result;
+        }
+    }
+}
+
+
+/* takes in sentence, returns sentence where words > 3 chars ending in a vowel are repeated, while words > 3 chars ending in
+consonant repeat all letters after last vowel. uses repeatWord & repeatLetters functions */
+function repeatingTranslate(sentence) {
+    let words = sentence.split(" ");
+    let vowels = "aeiouAEIOU";
+    let i = 0;
+    let newArray = [];
+
+    for (i = 0; i < words.length; i++) {
+        let currentWord = words[i];
+        let reference = currentWord.length - 1;
+        let lastLetter = currentWord[reference];
+        if (currentWord.length < 3) {
+            newArray.push(currentWord);
+        } else if (currentWord.length >= 3 && vowels.includes(lastLetter)) {
+            newArray.push(repeatWord(currentWord));
+        } else {
+            newArray.push(repeatLetters(currentWord));
+        }
+    }
+
+    let result = newArray.join(" ");
+    return result;
+}
