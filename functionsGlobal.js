@@ -1184,3 +1184,20 @@ function abbreviateWords(sentence) {
     let newSentence = newArray.join(" ");
     return newSentence;
 }
+
+
+// takes in snake_cased string, returns PascalCased string
+function snakeToCamel(string) {
+    let words = string.split("_");
+    let newWords = [];
+    let i = 0;
+
+    for (i = 0; i < words.length; i++) {
+        let currentWord = words[i];
+        let newWord = currentWord[0].toUpperCase() + currentWord.slice(1).toLowerCase();
+        newWords.push(newWord);
+    }
+
+    let newSentence = newWords.join("");
+    return newSentence;
+}
