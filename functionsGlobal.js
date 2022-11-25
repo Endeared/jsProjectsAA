@@ -1201,3 +1201,20 @@ function snakeToCamel(string) {
     let newSentence = newWords.join("");
     return newSentence;
 }
+
+
+// takes in sentence, returns sentence where every word is missing last vowel, uses removeLastVowel function
+function hipsterfy(sentence) {
+    let words = sentence.split(" ");
+    let newWords = [];
+    let i = 0;
+
+    for (i = 0; i < words.length; i++) {
+        let currentWord = words[i];
+        let newWord = removeLastVowel(currentWord);
+        newWords.push(newWord);
+    }
+
+    let newSentence = newWords.join(" ");
+    return newSentence;
+}
