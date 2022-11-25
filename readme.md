@@ -82,4 +82,10 @@ none of these functions have an individual / out-of-box purpose on their own. th
 + remove all vowels from any word in a sentence longer than 4 chars (**abbreviateWords**)
 + takes in snake_cased string, returns PascalCased string (**snakeToCamel**)
 + takes in sentence, returns sentence where every word is missing last vowel (**hispterfy**)
-    > __Note__ dependencies: **removeLastVowel**
+    > __Note__ dependencies: (**removeLastVowel**)
++ takes in a word, returns the word repeated (**repeatWord**)
++ takes in word, repeats all letters after last vowel (**repeatLetters**)
++ takes in sentence, returns sentence where any words > 3 chars ending in vowel repeat, while words ending in consonant repeat all letters after last vowel
+    > __Note__ dependencies: **repeatWord**, **repeatLetters**
++ takes in sentence, returns sentence where each word begins at its first vowel (**consonantCancel**)
++ takes in string, returns collapsed string (**sameCharCollapse**)
