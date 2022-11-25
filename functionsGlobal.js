@@ -1145,3 +1145,42 @@ function containsWord(sentence, targetWord) {
         return false;
     }
 }
+
+
+// removes all vowels from a word
+function removeVowels(word) {
+    let vowels = "aeiouAEIOU";
+    let removed = "";
+    let i = 0;
+
+    for (i = 0; i < word.length; i++) {
+        let currentChar = word[i];
+        if (vowels.includes(currentChar)) {
+        } else {
+            removed += currentChar;
+        }
+    }
+
+    return newWord;
+}
+
+
+// removes all vowels from any word in a sentence longer than 4 characters
+function abbreviateWords(sentence) {
+    let words = sentence.split(" ");
+    let i = 0;
+    let newArray = [];
+
+    for (i = 0; i < words.length; i++) {
+        let currentWord = words[i];
+        if (currentWord.length > 4) {
+            let newWord = removeVowels(currentWord);
+            newArray.push(newWord);
+        } else {
+            newArray.push(words[i]);
+        }
+    }
+
+    let newSentence = newArray.join(" ");
+    return newSentence;
+}
