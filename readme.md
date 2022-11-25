@@ -78,3 +78,8 @@ none of these functions have an individual / out-of-box purpose on their own. th
 + take in sentence, return shortest word in sentence (**shortestWord**)
 + take in sentence, return reversed sentence word-for-word (**reverseSentence**)
 + take in string / sentence and target word, checks string / sentence for target word (**containsWord**)
++ remove all vowels from word / string (**removeVowels**)
++ remove all vowels from any word in a sentence longer than 4 chars (**abbreviateWords**)
++ takes in snake_cased string, returns PascalCased string (**snakeToCamel**)
++ takes in sentence, returns sentence where every word is missing last vowel (**hispterfy**)
+    > __Note__ dependencies: **removeLastVowel**
