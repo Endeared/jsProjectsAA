@@ -1296,3 +1296,26 @@ function consonantCancel(sentence) {
     let result = newArray.join(" ");
     return result;
 }
+
+
+// takes in string, returns collapsed string
+function sameCharCollapse(str) {
+    let i = 0;
+    let reducible = true;
+
+    while (reducible) {
+        let letters = str.split("")
+        reducible = false;
+
+        for (i = 0; i < letters.length - 1; i++) {
+            if (letters[i] === letters[i + 1]) {
+                letters[i] = "";
+                letters[i + 1] = "";
+                reducible = true;
+            }
+        }
+        str = letters.join("");
+    }
+
+    return str;
+}
