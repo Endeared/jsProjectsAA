@@ -89,3 +89,7 @@ none of these functions have an individual / out-of-box purpose on their own. th
     > __Note__ dependencies: **repeatWord**, **repeatLetters**
 + takes in sentence, returns sentence where each word begins at its first vowel (**consonantCancel**)
 + takes in string, returns collapsed string (**sameCharCollapse**)
++ takes in array, returns 2d box array of all possible unique pairings (**pairsMaker**)
++ takes in array and a target, checks if any pair of values in array add up to target (**twoSum**)
++ take in array and target product, check if any pair of values in array multiply up to target product (**pairProduct**)
++ take in array, return how many unique pairs of nums have a sum of 0 (**strangeSums**)
