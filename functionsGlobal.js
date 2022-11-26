@@ -1530,3 +1530,109 @@ function zanyZip(array1, array2) {
 
     return newArray;
 }
+
+
+// takes in 2d matrix of equal height / width, return matrix with sum of values from each matrix at index pair
+function matrixAddition(matrixA, matrixB) {
+    let i = 0;
+    let j = 0;
+    let currentSum = 0;
+    let returnArray = [];
+    let returnMatrix = [];
+
+    for (i = 0; i < matrixA.length; i++) {
+        let currentRow = matrixA[i];
+        for (j = 0; j < currentRow.length; j++) {
+            let currentVal = matrixA[i][j];
+            let secondVal = matrixB[i][j];
+            currentSum = currentVal + secondVal;
+            returnArray.push(currentSum);
+            currentSum = 0;
+        }
+        returnMatrix.push(returnArray);
+        returnArray = [];
+    }
+
+    return returnMatrix;
+}
+
+
+// take in 2d array / matrix, returns a lucky number. lucky number = min value in row and max value in col simultaneously
+function luckyNumbers(matrix) {
+    let benchmark = Infinity;
+    let luckyNumCheck = null;
+    let checkRow = [];
+    let checkCol = [];
+    let i = 0;
+    let j = 0;
+    let k = 0;
+
+    for (i = 0; i < matrix.length; i++) {
+        for (j = 0; j < matrix[i].length; j++) {
+            let currentVal = matrix[i][j];
+            if (currentVal < benchmark) {
+                benchmark = currentVal;
+                luckyNumCheck = currentVal;
+            }
+        }
+        checkRow.push(luckyNumCheck);
+        benchmark = Infinity;
+        luckyNumCheck = null;
+    }
+    benchmark = -Infinity;
+
+    for (i = 0; i < matrix[0].length; i++) {
+        for (j = 0; j < matrix.length; j++) {
+            let currentVal = matrix[j][i];
+            if (currentVal > benchmark) {
+                benchmark = currentVal;
+                luckyNumCheck = currentVal;
+            }
+        }
+        checkCol.push(luckyNumCheck);
+        benchmark = -Infinity;
+        luckyNumCheck = null;
+    }
+
+    for (k = 0; k < checkCol.length; k++) {
+        if (checkCol.indexOf(checkRow[k]) !== -1) {
+            return checkRow[k];
+        }
+    }
+}
+
+
+// takes in 3x3 matrix and returns values in spiral order
+function spiralOrder(matrix) {
+    let newArray = [];
+    let i = 0;
+    let j = 0;
+    let count = 0;
+    let maxWidth = matrix[0].length;
+
+    for (i = 0; i < 1; i++) {
+        for (j = 0; j < matrix[i].length; j++) {
+            let currentVal = matrix[i][j];
+            newArray.push(currentVal);
+        }
+    }
+    count++;
+
+    for (i = count; i < matrix.length; i++) {
+        let currentVal = matrix[i][matrix.length - 1];
+        newArray.push(currentVal);
+    }
+
+    for (i = matrix[0].length - 2; i >= 0; i--) {
+        let currentVal = matrix[(matrix[0].length - 1)][i];
+        newArray.push(currentVal);
+    }
+
+    for (i = 0; i <= matrix[0].length - 2; i++) {
+        let col = matrix.length - 2;
+        let currentVal = matrix[col][i];
+        newArray.push(currentVal);
+    }
+
+    return newArray;
+}
