@@ -1413,3 +1413,20 @@ function strangeSums(array) {
 
     return zeroSumCount;
 }
+
+
+// takes in 2d array, returns sum of 2d array
+function twoDimensionalSum(array) {
+    let sum = 0;
+    let i = 0;
+    let j = 0;
+
+    for (i = 0; i < array.length; i++) {
+        let currentArray = array[i];
+        for (j = 0; j < currentArray.length; j++) {
+            sum += currentArray[j];
+        }
+    }
+
+    return sum;
+}
