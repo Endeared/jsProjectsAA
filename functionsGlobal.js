@@ -1430,3 +1430,39 @@ function twoDimensionalSum(array) {
 
     return sum;
 }
+
+
+// takes in 2d array, returns product of 2d array
+function twoDimensionalProduct(array) {
+    let i = 0;
+    let j = 0;
+    let product = 1;
+
+    for (i = 0; i < array.length; i++) {
+        let currentArray = array[i];
+        for (j = 0; j < currentArray.length; j++) {
+            product *= currentArray[j];
+        }
+    }
+
+    return product;
+}
+
+
+// takes in 2d array / matrix, returns largest value
+function maxInMatrix(matrix) {.
+    let i = 0;
+    let j = 0;
+    let max = -Infinity;
+
+    for (i = 0; i < matrix.length; i++) {
+        let currentArr = matrix[i];
+        for (j = 0; j < currentArr.length; j++) {
+            if (currentArr[j] >= max) {
+                max = currentArr[j];
+            }
+        }
+    }
+
+    return max;
+  }
