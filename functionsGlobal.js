@@ -1450,7 +1450,7 @@ function twoDimensionalProduct(array) {
 
 
 // takes in 2d array / matrix, returns largest value
-function maxInMatrix(matrix) {.
+function maxInMatrix(matrix) {
     let i = 0;
     let j = 0;
     let max = -Infinity;
@@ -1465,4 +1465,28 @@ function maxInMatrix(matrix) {.
     }
 
     return max;
+}
+
+
+// takes in 2d array / matrix, returns array with largest value in each column of 2d array / matrix
+function maxColumn(matrix) {
+    // your code here...
+      let height = matrix.length;
+      let width = matrix[0].length;
+      let maxArray = [];
+      let col = 0;
+      let row = 0;
+
+
+      for (col = 0; col < width; col++) {
+          let maxOfCol = matrix[0][col]
+          for (row = 1; row < height; row++) {
+              if (matrix[row][col] > maxOfCol) {
+                  maxOfCol = matrix[row][col];
+              }
+          }
+          maxArray.push(maxOfCol);
+      }
+
+      return maxArray;
   }
