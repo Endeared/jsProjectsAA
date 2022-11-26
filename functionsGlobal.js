@@ -1636,3 +1636,91 @@ function spiralOrder(matrix) {
 
     return newArray;
 }
+
+
+// take in array, get sum of adjacent pairs in array
+function getSum(arr) {
+    let i = 0;
+    let j = 0;
+    let sum = 0;
+    let newArray = [];
+
+    for (i = 0; i < arr.length - 1; i++) {
+        let currentValue = arr[i];
+        let secondValue = arr[i + 1];
+        let sum = currentValue + secondValue;
+        newArray.push(sum);
+    }
+    return newArray;
+}
+
+
+// make a pyramid (factor tree) using values of array as base, uses getSum function
+function pyramidArray(base) {
+    let pyramidLevel = [base];
+    while (pyramidLevel.length < base.length) {
+        let nextLevel = getSum(pyramidLevel[0]);
+        pyramidLevel.unshift(nextLevel);
+    }
+    return pyramidLevel;
+}
+
+
+// return an array of Pascal's Triangle of a set int height
+function pascalsTriangle(height) {
+    let triangle = [[1]];
+    while (triangle.length < height) {
+        let last = triangle[triangle.length - 1];
+        let next = [1];
+        for (let i = 0; i < last.length -1; i++) {
+            next.push(last[i] + last[i + 1]);
+        }
+        next.push(1);
+        triangle.push(next);
+    }
+    return triangle;
+}
+
+
+// takes in a string, console.logs the echoified string
+function echo(string) {
+    let lower = string.toLowerCase();
+    let upper = string.toUpperCase();
+
+    let result = upper + " ... " + string + " ... " + lower;
+
+    console.log(result);
+}
+
+
+// takes in word, returns it in pig latin
+function pigLatinWord(word) {
+    // your code here...
+    let vowels = "aeiouAEIOU"
+    let newString = "";
+    let i = 0;
+
+    if (vowels.includes(word[i])) {
+        return(word + "yay");
+    } else {
+        for (i = 0; i < word.length; i++) {
+            if (vowels.indexOf(word[i]) > -1) {
+                let firstConsonants = word.slice(0, i);
+                let middle = word.slice(i, word.length);
+                newString = middle + firstConsonants + "ay";
+                return newString;
+            }
+        }
+    }
+
+};
+
+
+// returns index of target value in an array, returns cannot be found if it does not exist
+function myIndexOf(arr, target) {
+    if (arr.indexOf(target) !== -1) {
+        return arr.indexOf(target);
+    } else {
+        return "Cannot be found."
+    }
+}
