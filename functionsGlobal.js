@@ -1489,4 +1489,44 @@ function maxColumn(matrix) {
       }
 
       return maxArray;
-  }
+}
+
+
+// takes in 2d array of equal lengths, returns array of pairings of equal indices
+function zip(array1, array2) {
+    let i = 0;
+    let newArray = [];
+
+    if (array1.length !== array2.length) {
+        return "Array lengths don't match."
+    }
+
+    for (i = 0; i < array1.length; i++) {
+        let arr1Val = array1[i];
+        let arr2Val = array2[i];
+        newArray.push([arr1Val, arr2Val]);
+    }
+
+    return newArray;
+}
+
+
+// takes in 2d array of any length, returns array of pairings of equal indices (no value at index = null)
+function zanyZip(array1, array2) {
+    let i = 0;
+    let newArray = [];
+
+    for (i = 0; i < array1.length || i < array2.length; i++) {
+        let val1 = array1[i];
+        let val2 = array2[i];
+        if (val1 === undefined) {
+            val1 = null;
+        }
+        if (val2 === undefined) {
+            val2 = null;
+        }
+        newArray.push([val1, val2]);
+    }
+
+    return newArray;
+}
