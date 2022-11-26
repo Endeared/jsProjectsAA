@@ -1724,3 +1724,33 @@ function myIndexOf(arr, target) {
         return "Cannot be found."
     }
 }
+
+
+// takes in two numbers, returns least common multiple of two nums
+function leastCommonMultiple(num1, num2) {
+    let i = 0;
+
+    for (i = 1; i < Infinity; i++) {
+        if (i % num1 === 0 && i % num2 === 0) {
+            return i;
+        }
+    }
+}
+
+
+// uncompresses a string
+function uncompress(str) {
+    let i = 0;
+    let j = 0;
+    let newString = "";
+
+    for (i = 1; i < str.length; i += 2) {
+        let valueOfNum = str[i];
+        let char = str[i - 1];
+        for (j = 0; j < valueOfNum; j++) {
+            newString += char;
+        }
+    }
+
+    return newString;
+}
