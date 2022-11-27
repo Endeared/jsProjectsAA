@@ -1811,3 +1811,15 @@ function setKeyInObject(obj, string, value) {
 
     return obj;
 }
+
+
+// takes in object with keys firstName and lastName, returns full name
+function getFullName(person) {
+    let objValues = [];
+    objValues.push(person.firstName);
+    objValues.push(person.lastName);
+
+    let name = objValues.join(" ");
+
+    return name;
+}
