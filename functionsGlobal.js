@@ -516,7 +516,7 @@ function reverseString(str) {
 
 
 // takes a word / string, removes last vowel (if possible), returns word / string
-function removeLastVowel (word) {
+function removeLastVowel(word) {
     if (typeof word !== 'string') {
         return null;
     }
@@ -603,7 +603,7 @@ function range(min, max) {
 // takes in a max integer, and returns an array with every even positive even integer less than max
 function evenNumbers(max) {
     if (typeof max !== 'number') {
-    return null;
+        return null;
     }
 
     let i = 0;
@@ -1471,24 +1471,24 @@ function maxInMatrix(matrix) {
 // takes in 2d array / matrix, returns array with largest value in each column of 2d array / matrix
 function maxColumn(matrix) {
     // your code here...
-      let height = matrix.length;
-      let width = matrix[0].length;
-      let maxArray = [];
-      let col = 0;
-      let row = 0;
+    let height = matrix.length;
+    let width = matrix[0].length;
+    let maxArray = [];
+    let col = 0;
+    let row = 0;
 
 
-      for (col = 0; col < width; col++) {
-          let maxOfCol = matrix[0][col]
-          for (row = 1; row < height; row++) {
-              if (matrix[row][col] > maxOfCol) {
-                  maxOfCol = matrix[row][col];
-              }
-          }
-          maxArray.push(maxOfCol);
-      }
+    for (col = 0; col < width; col++) {
+        let maxOfCol = matrix[0][col]
+        for (row = 1; row < height; row++) {
+            if (matrix[row][col] > maxOfCol) {
+                maxOfCol = matrix[row][col];
+            }
+        }
+        maxArray.push(maxOfCol);
+    }
 
-      return maxArray;
+    return maxArray;
 }
 
 
@@ -1672,7 +1672,7 @@ function pascalsTriangle(height) {
     while (triangle.length < height) {
         let last = triangle[triangle.length - 1];
         let next = [1];
-        for (let i = 0; i < last.length -1; i++) {
+        for (let i = 0; i < last.length - 1; i++) {
             next.push(last[i] + last[i + 1]);
         }
         next.push(1);
@@ -1701,7 +1701,7 @@ function pigLatinWord(word) {
     let i = 0;
 
     if (vowels.includes(word[i])) {
-        return(word + "yay");
+        return (word + "yay");
     } else {
         for (i = 0; i < word.length; i++) {
             if (vowels.indexOf(word[i]) > -1) {
@@ -1793,8 +1793,8 @@ function valuesInObject(obj) {
     let value;
 
     for (let key in obj) {
-      value = obj[key]
-      valArray.push(value);
+        value = obj[key]
+        valArray.push(value);
     }
 
     return valArray;
@@ -1805,8 +1805,8 @@ function valuesInObject(obj) {
 function setKeyInObject(obj, string, value) {
 
     obj = {
-      ...obj,
-      [string]: value
+        ...obj,
+        [string]: value
     };
 
     return obj;
@@ -1822,4 +1822,31 @@ function getFullName(person) {
     let name = objValues.join(" ");
 
     return name;
+}
+
+
+// takes in object and key name, if key name exists in object, return true, else false
+function doesKeyExist(obj, key) {
+    if (key in obj) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+
+// take in object array and key name, if key name exists in object array, return true, else false
+function keyInObjectArray(objArray, keyString) {
+    // Your code here
+    let i = 0;
+
+    for (i = 0; i < objArray.length; i++) {
+        if (keyString in objArray[i]) {
+            ;
+            return true;
+        }
+    }
+
+    return false;
 }
