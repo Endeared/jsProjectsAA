@@ -1775,3 +1775,13 @@ function catBuilder(name, color, toys) {
     };
     return cat;
 }
+
+
+// takes in object, returns all keys for object
+function keysInObject(obj) {
+    let keyArray = [];
+    for (let key in obj) {
+        keyArray.push(key);
+    }
+    console.log(keyArray);
+  }
