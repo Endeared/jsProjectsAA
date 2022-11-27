@@ -93,3 +93,8 @@ none of these functions have an individual / out-of-box purpose on their own. th
 + takes in array and a target, checks if any pair of values in array add up to target (**twoSum**)
 + take in array and target product, check if any pair of values in array multiply up to target product (**pairProduct**)
 + take in array, return how many unique pairs of nums have a sum of 0 (**strangeSums**)
++ take in 2d array, return sum of 2d array (**twoDimensionalSum**)
++ take in 2d array, return product of 2d array (**twoDimensionalProduct**)
++ take in 2d array, return largest value (**maxInMatrix**)
++ take in 2d array, return array with largest value in each column (**maxColumn**)
++ take in 2d array of equal lengths, return array of pairings of equal indices (**zip**)
