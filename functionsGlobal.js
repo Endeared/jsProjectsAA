@@ -1881,4 +1881,112 @@ function valuePair(obj1, obj2, key) {
     }
 
     return result;
-  }
+}
+
+
+// takes in an object, counts how many keys contain the string "apple" in their name
+function appleCounter(appleObj) {
+    let appleCount = 0;
+
+    for (let key in appleObj) {
+        key = key.toLowerCase();
+        if (key.includes("apple")) {
+            appleCount++;
+        }
+    }
+
+    return (appleCount);
+}
+
+
+// takes in all incoming parameters and sums them
+function restSum(...otherNums) {
+    let sum = 0;
+
+    for (i = 0; i < otherNums.length; i++) {
+        sum += otherNums[i];
+    }
+
+    return sum;
+}
+
+
+// takes in two arrays, spreads 2nd array into 1st array and returns 1st array
+function spreadItOut(array1, array2) {
+    array1.push(...array2);
+    return array1;
+}
+
+
+// takes in array, returns object containing count of each value in the array
+function arrayConverter(array) {
+    let count = 0;
+    i = 0;
+    let obj = {};
+
+    for (i = 0; i < array.length; i++) {
+        let string = array[i];
+        for (j = 0; j < array.length; j++) {
+            if (string === array[j]) {
+                count++
+            }
+        }
+        obj = {
+            ...obj,
+            [string]: count
+        };
+        count = 0;
+    }
+
+    return obj;
+}
+
+
+// takes in string, returns object containing counts of each character in string
+function stringConverter(string) {
+    let letters = string.split("");
+    let count = 0;
+    let i = 0;
+    let obj = {};
+
+    for (i = 0; i < letters.length; i++) {
+        let currentChar = letters[i];
+        for (j = 0; j < letters.length; j++) {
+            if (currentChar === letters[j]) {
+                count++
+            }
+        }
+        obj = {
+            ...obj,
+            [currentChar]: count
+        };
+        count = 0;
+    }
+
+    return obj;
+}
+
+
+// takes in array of objects with names + scores, returns object with score totals for each name
+function countScores(people) {
+    let scoreSum = 0;
+    let obj = {};
+    let i = 0;
+
+    for (i = 0; i < people.length; i++) {
+        let currentName = people[i].name;
+        for (j = 0; j < people.length; j++) {
+            let compareName = people[j].name;
+            if (currentName === compareName) {
+                scoreSum += people[j].score;
+                obj = {
+                    ...obj,
+                    [currentName]: scoreSum,
+                };
+            }
+        }
+        scoreSum = 0;
+    }
+
+    return obj;
+}
