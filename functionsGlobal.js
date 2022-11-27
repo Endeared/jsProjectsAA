@@ -1754,3 +1754,24 @@ function uncompress(str) {
 
     return newString;
 }
+
+
+// takes in object, prints out key values for object
+function printObject(obj) {
+    // your code here...
+    for (let key in obj) {
+        let value = obj[key]
+        console.log(key + " - " + value);
+    }
+}
+
+
+// takes in object values for a cat, returns values
+function catBuilder(name, color, toys) {
+    let cat = {
+        name: name,
+        color: color,
+        toys: toys
+    };
+    return cat;
+}
