@@ -108,3 +108,8 @@ none of these functions have an individual / out-of-box purpose on their own. th
 + return array of Pascal's Triangle of a set int height (**pascalsTriangle**)
 + takes in a string, console.logs the echoified string (**echo**)
 + takes in word, returns it in pig latin (**pigLatinWord**)
++ returns index of target value in an array, returns message if it cannot be found (**myIndexOf**)
++ takes in two nums, returns least common multiple of two nums (**leastCommonMultiple**)
++ uncompresses a string (**uncompress**)
++ takes in obj, prints out values of keys for obj (**printObject**)
++ takes in obj values for a cat, returns values of keys 🙃 (**catBuilder**)
