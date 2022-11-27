@@ -1777,11 +1777,37 @@ function catBuilder(name, color, toys) {
 }
 
 
-// takes in object, returns all keys for object
+// takes in object, returns array of all keys for object
 function keysInObject(obj) {
     let keyArray = [];
     for (let key in obj) {
         keyArray.push(key);
     }
-    console.log(keyArray);
-  }
+    return keyArray;
+}
+
+
+// takes in object, returns array of all values for keys of object
+function valuesInObject(obj) {
+    let valArray = [];
+    let value;
+
+    for (let key in obj) {
+      value = obj[key]
+      valArray.push(value);
+    }
+
+    return valArray;
+}
+
+
+// takes in object name, a key name, and value, and assigns key + value to object (if it exists)
+function setKeyInObject(obj, string, value) {
+
+    obj = {
+      ...obj,
+      [string]: value
+    };
+
+    return obj;
+}
