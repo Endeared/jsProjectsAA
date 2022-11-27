@@ -1838,7 +1838,6 @@ function doesKeyExist(obj, key) {
 
 // take in object array and key name, if key name exists in object array, return true, else false
 function keyInObjectArray(objArray, keyString) {
-    // Your code here
     let i = 0;
 
     for (i = 0; i < objArray.length; i++) {
@@ -1850,3 +1849,36 @@ function keyInObjectArray(objArray, keyString) {
 
     return false;
 }
+
+
+// takes in object, returns all keys and values of object
+function breakDownObj(obj) {
+    let array = [];
+    for (let key in obj) {
+        array.push(key);
+    }
+    for (let key in obj) {
+        let value = obj[key]
+        array.push(value);
+    }
+
+    return (array);
+}
+
+
+// takes in two objects, checks for value of key in both objects
+function valuePair(obj1, obj2, key) {
+    let result = [];
+
+    if (key in obj1) {
+        let value = obj1[key]
+        result.push(value);
+    }
+
+    if (key in obj2) {
+        let value = obj2[key];
+        result.push(value);
+    }
+
+    return result;
+  }
