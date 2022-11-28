@@ -2010,15 +2010,15 @@ const arrowMyMap = (array, callback) => {
     let newArray = [];
 
     for (i = 0; i < array.length; i++) {
-      let currentValue = array[i];
-      newArray.push(callback(currentValue));
+        let currentValue = array[i];
+        newArray.push(callback(currentValue));
     }
 
     return newArray;
-   }
+}
 
 // takes in any number of numbers, returns sum of all numbers (arwfunc)
-   const arrowRestSum = (...numbers) => {
+const arrowRestSum = (...numbers) => {
     let i = 0;
     let runningSum = 0;
 
@@ -2035,21 +2035,38 @@ const arrowAvgValue = (array) => {
     let runningSum = 0;
 
     for (let i = 0; i < array.length; i++) {
-      runningSum += array[i];
+        runningSum += array[i];
     }
 
     return (runningSum / array.length);
-  }
+}
 
 
-  // takes in array, returns array + mirrored array (arwfunc)
-  const arrowMirrorArray = (array) => {
+// takes in array, returns array + mirrored array (arwfunc)
+const arrowMirrorArray = (array) => {
     let mirror = [];
 
     for (let i = array.length - 1; i > -1; i--) {
-      mirror.push(array[i]);
+        mirror.push(array[i]);
     }
 
     mirror = array.concat(mirror);
     return mirror;
-  }
+}
+
+// sandwich maker based on your input (arwfunc)
+const sandwichMaker = () => {
+    let string = "One sandwich with tomato";
+
+    return function (ingredient) {
+        string = string + " and " + ingredient;
+        return string;
+    }
+
+}
+
+
+// takes in time (in ms) and function, executes function after time has passed
+const funcTimer = (time, func) => {
+    setTimeout(func, time);
+}
