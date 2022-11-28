@@ -2198,7 +2198,7 @@ function sumToN(num) {
         return null;
     }
 
-    return num + sumToN(num -1)
+    return num + sumToN(num - 1)
 }
 
 
@@ -2209,11 +2209,11 @@ function sumArray(array, i = array.length) {
     }
 
     return sumArray(array, i - 1) + array[i - 1];
-  }
+}
 
 
 // takes in ransom note & magazine chars, returns if ransom note can be made from magazine chars or not (for leetcode #383)
-  var canConstruct = function(ransomNote, magazine) {
+var canConstruct = function (ransomNote, magazine) {
     let magazineChars = magazine.split("");
     let i = 0;
 
