@@ -2070,3 +2070,86 @@ const sandwichMaker = () => {
 const funcTimer = (time, func) => {
     setTimeout(func, time);
 }
+
+
+// each time a specific function name is called, returns count + 1 (aka how many times that function has been called)
+const hiddenCounter = () => {
+    count = 0;
+
+    return function() {
+        count++;
+        return count;
+    }
+}
+
+
+// once lazyAdder is invoked 3 times, takes sum of all 3 numbers invoked
+const lazyAdder = (firstNum) => {
+    return function(secondNum) {
+        return function(thirdNum) {
+            let sum = (firstNum + secondNum + thirdNum)
+            return sum;
+        }
+    }
+  }
+
+
+  // takes in interrupting word + string, returns string with interrupting word in between each original string word
+  const interrupter = (interruptingWord) => {
+
+    return function(string) {
+        let words = string.split(" ");
+        let i = 1;
+        let len = words.length * 2 - 1
+
+        for(i = 1; i < len; i += 2) {
+            words.splice(i, 0, interruptingWord);
+        }
+
+        let result = words.join(" ");
+        return result;
+    }
+  }
+
+
+  // counts down to string once n = 0... pointless, but part of the assignment :/
+  const countDownTimer = (n) => {
+
+    if (n === 0) {
+        return "Happy New Year!";
+    }
+
+   const checker = () => {
+        n--;
+        if (n <= 0) {
+            return "Happy New Year!";
+        } else {
+            return checker;
+        }
+    };
+    return checker;
+}
+
+
+
+// takes in height of 3 sides of rectangle, one at a time, returns vol after 3rd input
+const recVolume = (height) => {
+    let dimensions = [];
+    dimensions.push(height);
+
+    return function(num) {
+        if (dimensions.length < 3) {
+            dimensions.push(num);
+        }
+        if (dimensions.length >= 3) {
+            let vol = 1;
+            let i = 0;
+            for (i = 0; i < dimensions.length; i++) {
+                vol = vol * dimensions[i];
+            }
+            return vol;
+        } else {
+            return num;
+        }
+    }
+  }
