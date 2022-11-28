@@ -2016,3 +2016,40 @@ const arrowMyMap = (array, callback) => {
 
     return newArray;
    }
+
+// takes in any number of numbers, returns sum of all numbers (arwfunc)
+   const arrowRestSum = (...numbers) => {
+    let i = 0;
+    let runningSum = 0;
+
+    for (i = 0; i < numbers.length; i++) {
+        runningSum += numbers[i];
+    }
+
+    return runningSum;
+}
+
+
+// takes in array, returns avg of array (arwfunc)
+const arrowAvgValue = (array) => {
+    let runningSum = 0;
+
+    for (let i = 0; i < array.length; i++) {
+      runningSum += array[i];
+    }
+
+    return (runningSum / array.length);
+  }
+
+
+  // takes in array, returns array + mirrored array (arwfunc)
+  const arrowMirrorArray = (array) => {
+    let mirror = [];
+
+    for (let i = array.length - 1; i > -1; i--) {
+      mirror.push(array[i]);
+    }
+
+    mirror = array.concat(mirror);
+    return mirror;
+  }
