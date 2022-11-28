@@ -2210,3 +2210,21 @@ function sumArray(array, i = array.length) {
 
     return sumArray(array, i - 1) + array[i - 1];
   }
+
+
+// takes in ransom note & magazine chars, returns if ransom note can be made from magazine chars or not (for leetcode #383)
+  var canConstruct = function(ransomNote, magazine) {
+    let magazineChars = magazine.split("");
+    let i = 0;
+
+    for (i = 0; i < ransomNote.length; i++) {
+        let currentChar = ransomNote[i];
+        if (magazineChars.indexOf(currentChar) === -1) {
+            return false
+        } else {
+            magazineChars.splice(magazineChars.indexOf(currentChar), 1);
+        }
+    }
+
+    return true;
+};
