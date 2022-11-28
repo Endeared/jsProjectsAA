@@ -2188,3 +2188,25 @@ function readThrough(nums, i = 0) {
         readThrough(nums, i + 1);
     }
 }
+
+
+// returns sum of natural numbers, recursive
+function sumToN(num) {
+    if (num === 0) {
+        return num;
+    } else if (num < 0) {
+        return null;
+    }
+
+    return num + sumToN(num -1)
+}
+
+
+// returns sum of array, recursive
+function sumArray(array, i = array.length) {
+    if (i <= 0) {
+        return 0;
+    }
+
+    return sumArray(array, i - 1) + array[i - 1];
+  }
