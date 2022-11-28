@@ -43,3 +43,26 @@ let largeCheck = nums.reduce(function(accum, el) {
     }
 })
 console.log(largeCheck);
+
+
+
+let average = function(num1, num2) {
+    let avg = (num1 + num2) / 2;
+    return avg;
+}
+
+let averageArrow = (num1, num2) => {
+    let avg = (num1 + num2) / 2
+    return avg;
+}
+
+let yoink = string => {
+    let yoinked = string + "yoink!";
+    return yoinked;
+}
+
+let nun = () => {
+    console.log();
+}
+
+/* can use fat arrow for single functions with no need to return */

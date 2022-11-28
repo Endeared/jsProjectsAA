@@ -2002,3 +2002,17 @@ function myForEach(array, callback) {
     }
 
 };
+
+
+// takes in array and callback method, returns new array using callback on each value of original array
+const arrowMyMap = (array, callback) => {
+    let i = 0;
+    let newArray = [];
+
+    for (i = 0; i < array.length; i++) {
+      let currentValue = array[i];
+      newArray.push(callback(currentValue));
+    }
+
+    return newArray;
+   }
