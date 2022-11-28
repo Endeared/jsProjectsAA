@@ -1990,3 +1990,15 @@ function countScores(people) {
 
     return obj;
 }
+
+
+// takes in array and callback as args, returns callback values from array
+function myForEach(array, callback) {
+    let i = 0;
+
+    for (i = 0; i < array.length; i++) {
+        let value = array[i];
+        callback(value, i, array);
+    }
+
+};
