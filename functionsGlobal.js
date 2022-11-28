@@ -2153,3 +2153,38 @@ const recVolume = (height) => {
         }
     }
 }
+
+
+// recursive subtraction of 1 until num is equal to 0
+function subtractRecurse(num) {
+    if (num === 0) {
+        return
+    } else {
+        console.log(num);
+        num--;
+        subtractRecurse(num);
+    }
+}
+
+
+// non-recursive substraction of 1 until num is equal to 0
+function subtract(num) {
+    while (num > 0) {
+        console.log(num);
+        num--;
+    }
+
+    return;
+}
+
+
+// reads through and prints out contents of array, recursive
+function readThrough(nums, i = 0) {
+
+    if (i >= nums.length) {
+        return;
+    } else {
+        console.log(nums[i])
+        readThrough(nums, i + 1);
+    }
+}
