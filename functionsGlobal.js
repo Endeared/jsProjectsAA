@@ -2228,3 +2228,20 @@ var canConstruct = function (ransomNote, magazine) {
 
     return true;
 };
+
+
+// takes in array, returns squares of array in ascending order (for leetcode #977)
+var sortedSquares = function(nums) {
+    let i = 0;
+    let squared = [];
+
+    for (i = 0; i < nums.length; i++) {
+        let currentNum = nums[i];
+        let newNum = currentNum * currentNum;
+        squared.push(newNum)
+    }
+    squared.sort(function(a, b) {
+        return a - b;
+    });
+    return squared;
+};
